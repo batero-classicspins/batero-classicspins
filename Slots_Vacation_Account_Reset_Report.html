@@ -1,0 +1,203 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Slots Vacation · Account Reset Investigation</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#f6f5f2;--card:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--ink3:#7a7974;--line:#e4e2dc;--track:#efeee9;
+--accent:#2a78d6;--warn:#b25e00;--crit:#d03b3b;--good:#0a7f0a;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;}
+.wrap{max-width:980px;margin:0 auto;padding:32px 20px 64px}
+header.cover{background:#0d366b;color:#fff;border-radius:16px;padding:32px 32px 28px;margin-bottom:24px}
+header.cover h1{margin:0 0 6px;font-size:30px;letter-spacing:-.01em}
+header.cover .sub{color:#cde2fb;font-size:15px}
+header.cover .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12.5px;color:#b7d3f6}
+header.cover .meta b{color:#fff;font-weight:600}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:0 0 22px}
+h2{font-size:21px;margin:0 0 4px;letter-spacing:-.01em}
+h2 .num{color:var(--accent);margin-right:8px}
+.lede{color:var(--ink2);margin:0 0 18px}
+h3{font-size:15.5px;margin:22px 0 10px}
+p,li{color:#222}
+ul,ol{padding-left:20px;margin:6px 0}
+li{margin:3px 0}
+code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:#efeee9;padding:1px 5px;border-radius:4px}
+.callout{border-left:4px solid var(--accent);background:#eef4fc;padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.callout.warn{border-color:#eda100;background:#fdf6e6}
+.callout.crit{border-color:var(--crit);background:#fbeeee}
+.callout.good{border-color:var(--good);background:#edf7ed}
+.callout b:first-child{display:block;margin-bottom:2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0 6px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
+.tv{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.tl{color:var(--ink2);font-size:12.5px;margin-top:4px}
+.hbars{margin:8px 0 4px}
+.hrow{display:grid;grid-template-columns:150px 1fr;gap:4px 14px;align-items:center;padding:4px 0}
+.hlabel{font-size:13px;color:var(--ink);text-align:right}
+.htrack{position:relative;height:18px;background:var(--track);border-radius:4px;display:flex;align-items:center}
+.hfill{height:100%;border-radius:4px;min-width:3px}
+.hval{font-size:12px;color:var(--ink);font-weight:600;margin-left:8px;white-space:nowrap}
+.tblwrap{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f3f2ee;font-weight:600;color:var(--ink2);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;vertical-align:1px}
+.tag.crit{background:#fbe1e1;color:#a52626}.tag.warn{background:#fdefd0;color:#8a5a00}.tag.good{background:#dff0df;color:#176317}.tag.info{background:#dde9f9;color:#1c5cab}
+.timeline{display:flex;flex-wrap:wrap;align-items:stretch;margin:14px 0}
+.step{flex:1 1 150px;background:#fff;border:1px solid var(--line);padding:12px 14px}
+.step:first-child{border-radius:10px 0 0 10px}.step:last-child{border-radius:0 10px 10px 0}
+.step .t{font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.04em}
+.step .v{font-weight:700;font-size:15px;margin:2px 0}
+.step .d{font-size:12.5px;color:var(--ink2)}
+.foot{color:var(--ink3);font-size:12px;margin-top:8px}
+@media (max-width:640px){.hrow{grid-template-columns:90px 1fr}section.card{padding:20px 16px}}
+@media print{body{background:#fff}.wrap{padding:0}section.card,header.cover,.timeline,table{break-inside:avoid}section.card{border-color:#ddd}}
+</style>
+<body><div class="wrap">
+
+<header class="cover">
+  <h1>Slots Vacation · Điều tra mất account</h1>
+  <div class="sub">User bị reset về account mới: số lượt, pattern, và liên quan đến update version hay không</div>
+  <div class="meta"><span>Project <b>slots-vacation-9b374</b></span><span>Dataset <b>analytics_501019153</b></span><span>Dữ liệu <b>07/08 – 05/10/2026</b></span><span>Ngày lập <b>07/10/2026</b></span></div>
+</header>
+
+<section class="card">
+  <h2><span class="num">0</span>Tóm tắt</h2>
+  <div class="tiles">
+    <div class="tile"><div class="tv">124</div><div class="tl">lượt mất account thật (93 thiết bị)</div></div>
+    <div class="tile"><div class="tv">51</div><div class="tl">lượt đúng pattern lỗi client (43 thiết bị)</div></div>
+    <div class="tile"><div class="tv">6</div><div class="tl">account level ≥ 500 bị mất (13–26/09)</div></div>
+    <div class="tile"><div class="tv">1 / 4.069</div><div class="tl">lần đổi user_id trùng lúc đổi version</div></div>
+  </div>
+  <div class="callout crit"><b>Không phải do thao tác update app.</b> Lỗi có từ 07/08, trước các đợt release, và gần như không bao giờ xảy ra đúng lúc update. Đây là lỗi có sẵn trong logic load save / login: khi mở app, client không đọc được save nên đi vào nhánh user mới.</div>
+  <div class="callout warn"><b>Nhưng version 103 làm lỗi nặng hơn.</b> Tỷ lệ trên 10.000 session ở bản 103 cao gấp khoảng 3 lần (Android) và 3–7 lần (iOS) so với 101/102. Nên ưu tiên review các thay đổi về save/auth trong bản 103.</div>
+  <div class="callout"><b>"Loại 1" (user_id xuất hiện trên rất nhiều pseudo_id) không phải mất account.</b> Phần lớn là một người chơi thật trên tablet Samsung. Account vẫn còn, chỉ có Firebase pseudo_id bị tạo lại mỗi vài phút. Nhóm này làm sai lệch số liệu user mới, DAU và retention.</div>
+</section>
+
+<section class="card">
+  <h2><span class="num">1</span>Hai case được báo cáo</h2>
+  <h3>Case A: <code>744435ff-2192-4861-b264-1e8ae387b9ce</code></h3>
+  <ul>
+    <li><b>Không hoạt động trong tháng 9/2026.</b> Đã tìm theo user_id, theo pseudo_id, và quét toàn bộ field (khoảng 32 GB): 0 dòng. Dữ liệu tháng 9 có đủ 30 ngày.</li>
+    <li>Chỉ xuất hiện từ 02/10 đến 05/10 (284 events). Thiết bị Android SM-G781U (Galaxy S20 FE), ở Mỹ, pseudo_id <code>6df7e381…</code>.</li>
+    <li>Lần đầu thiết bị này mở app là 24/12/2025, nhưng từ 07/08 đến 01/10 không có event nào. Thiết bị chỉ gắn với đúng một user_id này.</li>
+    <li>Nhận định: user quay lại sau thời gian nghỉ. Account cũ (nếu có) nằm trên máy khác, hoặc nằm trước 07/08 nên ngoài dữ liệu export.</li>
+  </ul>
+  <h3>Case B: <code>2e51fdb0-1461-4748-beaf-3083bfeb994a</code> <span class="tag crit">mất account</span></h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th></th><th>Account cũ <code>832490ba…</code></th><th>Account mới <code>2e51fdb0…</code></th></tr></thead>
+    <tbody>
+      <tr><td>Thời gian</td><td>07/08 → 23/09 (46 ngày, 3.413 events)</td><td>23/09 → 05/10 (13 ngày, 725 events)</td></tr>
+      <tr><td>Level</td><td>≥ 1311</td><td>2</td></tr>
+      <tr><td>Coin</td><td>khoảng 21,5 triệu</td><td>bắt đầu lại từ 5.000</td></tr>
+      <tr><td>Version</td><td>101, 102, 103</td><td>103, 104</td></tr>
+    </tbody></table></div>
+  <p>Thiết bị: iPhone 11, iOS, ở Mỹ, pseudo_id <code>31216FE1…</code>. App cài lần đầu ngày 28/09/2025.</p>
+  <div class="timeline">
+    <div class="step"><div class="t">13:55:17</div><div class="v">Bình thường</div><div class="d">balance 21.511.919</div></div>
+    <div class="step"><div class="t">16:09:34</div><div class="v">Mở app</div><div class="d">session thứ 1892, không cài lại</div></div>
+    <div class="step"><div class="t">16:09:38</div><div class="v">install_game</div><div class="d">balance reset về 5.000</div></div>
+    <div class="step"><div class="t">16:10:29</div><div class="v">user_id mới</div><div class="d">chơi lại từ level 1</div></div>
+  </div>
+  <p class="foot">Giờ UTC, ngày 23/09/2026. Level là con số cuối cùng có trong log (level_up cuối được ghi ngày 07/08), nên level thực tế có thể cao hơn.</p>
+</section>
+
+<section class="card">
+  <h2><span class="num">2</span>Quét toàn bộ database</h2>
+  <p class="lede">Tìm mọi thiết bị (user_pseudo_id) có user_id bị đổi, rồi phân loại theo việc có event <code>install_game</code> (game cấp lại 5.000 coin như cài mới) ngay lúc đổi hay không.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Nhóm</th><th class="n">Số lượt</th><th class="n">Thiết bị</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>Tất cả các lần đổi user_id</td><td class="n">4.069</td><td class="n">849</td><td></td></tr>
+      <tr><td>Loại 1: user_id trên ≥ 5 pseudo_id</td><td class="n">≈ 720</td><td class="n">–</td><td>Không phải mất account, xem mục 4</td></tr>
+      <tr><td>Loại 2: reset hàng chục đến hàng trăm lần</td><td class="n">phần lớn trong 2.387</td><td class="n">≈ 28</td><td>Android, level thấp, tới 460 lần reset trong vài ngày. Giống bot hoặc farm coin tân thủ</td></tr>
+      <tr><td><b>Mất account thật</b></td><td class="n"><b>124</b></td><td class="n"><b>93</b></td><td>≤ 5 reset mỗi máy; account cũ chơi ≥ 2 ngày, hoặc level ≥ 20, hoặc ≥ 1 triệu coin. 33 lượt sau đó quay lại được</td></tr>
+      <tr><td><b>Đúng pattern như Case B</b></td><td class="n"><b>51</b></td><td class="n"><b>43</b></td><td>Cùng máy, không cài lại, account chỉ dùng trên máy đó. Chỉ 5 lượt quay lại được</td></tr>
+    </tbody></table></div>
+  <h3>Account lớn bị mất (level ≥ 500)</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Ngày</th><th>OS</th><th>Version</th><th>Account cũ</th><th class="n">Level</th><th>Trạng thái</th></tr></thead>
+    <tbody>
+      <tr><td>13/09</td><td>iOS</td><td>103</td><td><code>28026bca-89e0-4fdc-b121-ca661812e719</code></td><td class="n">1322</td><td><span class="tag good">đã quay lại</span></td></tr>
+      <tr><td>20/09</td><td>Android</td><td>103</td><td><code>ff5e2895-fe40-40c6-a29c-5a8716b69ca3</code></td><td class="n">1314</td><td><span class="tag crit">mất</span></td></tr>
+      <tr><td>21/09</td><td>iOS</td><td>103</td><td><code>a7031ca3-dd52-4062-b5ca-7d3b83c9f61c</code></td><td class="n">1326</td><td><span class="tag crit">mất</span></td></tr>
+      <tr><td>21/09</td><td>Android</td><td>102</td><td><code>9300142a-0cff-41fa-a781-ad6fb190d9f5</code></td><td class="n">590</td><td><span class="tag crit">mất</span></td></tr>
+      <tr><td>23/09</td><td>iOS</td><td>103</td><td><code>832490ba-40db-415b-b8bd-f3a9e25845e5</code></td><td class="n">1311</td><td><span class="tag crit">mất (Case B)</span></td></tr>
+      <tr><td>26/09</td><td>iOS</td><td>102</td><td><code>50ad895a-727e-4b8e-833e-0bd1870e6667</code></td><td class="n">729</td><td><span class="tag crit">mất</span></td></tr>
+    </tbody></table></div>
+  <p class="foot">Danh sách đầy đủ 124 case: <code>slots_vacation_account_reset_cases.csv</code> (cột <code>strict_pattern</code> đánh dấu 51 case đúng pattern).</p>
+</section>
+
+<section class="card">
+  <h2><span class="num">3</span>Có phải do update version không?</h2>
+  <h3>Bằng chứng là không phải do thao tác update</h3>
+  <ul>
+    <li>Chỉ <b>1 trong 4.069</b> lần đổi user_id có version trước và sau khác nhau.</li>
+    <li>Chỉ <b>0,9%</b> các lần reset có event <code>app_update</code> trong 24 giờ trước đó.</li>
+    <li>Các account lớn bị mất đều đã chạy version đó từ 1 đến 39 ngày trước khi bị reset.</li>
+    <li>Lỗi xuất hiện mỗi tuần từ 07/08, không tăng vọt vào các ngày release (Android 103 ngày 17/09, 104 ngày 25/09; iOS 104 ngày 28/09).</li>
+  </ul>
+  <h3>Nhưng tỷ lệ tăng ở version mới</h3>
+  <p class="lede">Số case đúng pattern trên 10.000 session, theo version.</p>
+  <div class="hbars">
+    <div class="hrow"><div class="hlabel">Android 101</div><div class="htrack"><div class="hfill" style="width:20.4%;background:#2a78d6"></div><span class="hval">0,86</span></div></div>
+    <div class="hrow"><div class="hlabel">Android 102</div><div class="htrack"><div class="hfill" style="width:31.1%;background:#2a78d6"></div><span class="hval">1,31</span></div></div>
+    <div class="hrow"><div class="hlabel"><b>Android 103</b></div><div class="htrack"><div class="hfill" style="width:100%;background:#d03b3b"></div><span class="hval" style="position:absolute;right:6px;color:#fff">4,21</span></div></div>
+    <div class="hrow"><div class="hlabel">iOS 101</div><div class="htrack"><div class="hfill" style="width:11.9%;background:#2a78d6"></div><span class="hval">0,50</span></div></div>
+    <div class="hrow"><div class="hlabel">iOS 102</div><div class="htrack"><div class="hfill" style="width:5%;background:#2a78d6"></div><span class="hval">0,21</span></div></div>
+    <div class="hrow"><div class="hlabel"><b>iOS 103</b></div><div class="htrack"><div class="hfill" style="width:34%;background:#d03b3b"></div><span class="hval">1,43</span></div></div>
+  </div>
+  <p class="foot">Số case còn nhỏ (Android 103: 9 case; iOS 103: 15 case), nhưng chênh lệch giữa 103 và 102 đủ lớn để không phải ngẫu nhiên. iOS 104 chưa đủ dữ liệu để kết luận.</p>
+  <h3>Dấu hiệu lỗi</h3>
+  <ol>
+    <li>User mở app lại (cold start). Flow <code>first_loading</code> chạy, <code>ga_session_number</code> vẫn tăng tiếp, không có <code>first_open</code>.</li>
+    <li>Client không đọc được save hoặc token. Nó đi vào nhánh user mới và bắn <code>earn_virtual_currency</code> với <code>placement=install_game</code>, balance = 5.000.</li>
+    <li>Khoảng 1 giây sau, lúc <code>tunning_data</code> xong, <code>user_id</code> mới xuất hiện. User chơi lại từ level 1.</li>
+  </ol>
+  <div class="callout"><b>Hướng kiểm tra</b>Trường hợp đọc save local thất bại (file hỏng, timeout, lỗi keychain trên iOS) thì game có tự tạo guest mới thay vì retry hoặc báo lỗi không. Ưu tiên diff bản 102 → 103.</div>
+  <p><b>Phụ, ở iOS 104:</b> từ 28/09 có khoảng 16 lượt cài mới bị tạo 2 user_id ngay trong session đầu tiên. Không mất tiến trình, nhưng làm sai lệch số liệu user mới.</p>
+</section>
+
+<section class="card">
+  <h2><span class="num">4</span>Loại 1: user_id trên rất nhiều pseudo_id</h2>
+  <p class="lede">87 user_id, 4.096 pseudo_id. Phần lớn là một người chơi thật trên một máy, với Firebase pseudo_id bị tạo lại liên tục.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Country</th><th class="n">pseudo_id</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>Belgium</td><td class="n">1.319</td><td>1 user, Knokke-Heist, SM-T733</td></tr>
+      <tr><td>United Kingdom</td><td class="n">750</td><td>phần lớn 1 user, Londonderry, SM-T500</td></tr>
+      <tr><td>Canada</td><td class="n">490</td><td>2 user_id, Toronto, SM-T290 / Lenovo TB-8505F</td></tr>
+      <tr><td>United States</td><td class="n">294</td><td></td></tr>
+      <tr><td>Israel</td><td class="n">257</td><td>1 user, SM-A336E</td></tr>
+      <tr><td>Philippines</td><td class="n">209</td><td></td></tr>
+      <tr><td>Vietnam</td><td class="n">171</td><td>chủ yếu máy nội bộ / QA</td></tr>
+      <tr><td>Romania</td><td class="n">134</td><td></td></tr>
+      <tr><td>Saudi Arabia</td><td class="n">114</td><td>iPhone 17, iOS 26.6.2</td></tr>
+      <tr><td>Singapore</td><td class="n">87</td><td>chủ yếu máy nội bộ / QA</td></tr>
+    </tbody></table></div>
+  <ul>
+    <li><b>87% Android, 13% iOS. 73% là tablet</b>, chủ yếu Samsung Galaxy Tab: SM-T733 (Tab S7 FE) 1.319, SM-T500 (Tab A7) 685, SM-T290 (Tab A 8.0) 192. Ngoài ra Lenovo TB-8505F 279, Huawei AGS-W09 116.</li>
+    <li>Android version: <b>Android 14</b> 1.711, Android 12 702, Android 11 354, Android 10 279.</li>
+    <li>iOS ít hơn nhiều: iPhone 17 / iOS 26.6.2, iPad 6th gen / iOS 17.7.11, và vài iPad chạy iOS 26 hoặc 27.</li>
+    <li>Nguồn cài: 85% Google Play, 9% App Store. Là user thật, không phải bản sideload.</li>
+  </ul>
+  <h3>Bản chất</h3>
+  <ul>
+    <li>Ở 6 user_id lớn nhất, mỗi pseudo_id chỉ sống trung vị <b>2–21 phút</b>, chưa tới 1 session mỗi pseudo_id.</li>
+    <li><code>ga_session_number</code> luôn bằng 1, tổng cộng <b>0 event <code>first_open</code></b>.</li>
+    <li>Người chơi vẫn lên level đều (131, 222, 1330…) và chơi liên tục từ 07/08 đến 05/10.</li>
+  </ul>
+  <div class="callout warn"><b>Account vẫn còn, nhưng số liệu bị sai lệch</b>Firebase app-instance-id bị tạo lại liên tục, có thể do bộ nhớ Firebase bị xoá hoặc không lưu được trên các tablet này (chế độ dùng chung, Kids mode, app dọn bộ nhớ), hoặc code gọi <code>resetAnalyticsData</code> / <code>setAnalyticsCollectionEnabled</code>. Hệ quả: những user này bị đếm thành hàng nghìn "user", làm hỏng retention, funnel và DAU.</div>
+  <p>Ngoại lệ là các ID ở Vietnam và Singapore (cài <code>manual_install</code> hoặc BlueStacks, build <code>.DEV</code>, cùng một ID trên cả Android lẫn iPad). Mấy ID này mới đúng là máy test nội bộ.</p>
+</section>
+
+<section class="card">
+  <h2><span class="num">5</span>Phương pháp và giới hạn</h2>
+  <ul>
+    <li>Nguồn: Firebase Analytics export trên BigQuery, bảng <code>events_*</code>, 07/08 đến 05/10/2026.</li>
+    <li>"Reset" là khi user_id đổi trên cùng pseudo_id và có <code>install_game</code> trong khoảng 10 phút trước đến 1 phút sau lúc đổi.</li>
+    <li>Loại khỏi nhóm "mất account thật": user_id có trên ≥ 5 pseudo_id, thiết bị reset > 5 lần, và account trên 10⁹ coin ở level thấp (có thể là QA hoặc cheat).</li>
+    <li>Dữ liệu chỉ có từ 07/08, nên level và coin của account cũ có thể thấp hơn thực tế. Số liệu cuối cùng nên được đối chiếu với server.</li>
+  </ul>
+</section>
+
+</div></body></html>
